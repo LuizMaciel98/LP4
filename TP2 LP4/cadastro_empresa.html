@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="apple-touch-icon" sizes="57x57" href="res/img/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="res/img/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="res/img/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="res/img/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="res/img/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="res/img/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="res/img/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="res/img/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="res/img/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="res/img/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="res/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="res/img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="res/img/favicon-16x16.png">
+	<link rel="manifest" href="res/img/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="res/img/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<title>Solari</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body>
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light amber darken-2 scrolling-navbar">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul  class="navbar-nav mr-auto">
+        	<li class="nav-item">
+                <a style="font-size: 35px;" class="nav-link" href="#">S<i class="fa fa-sun-o" aria-hidden="true"></i>LARI</a>
+            </li>
+            <li class="nav-item">
+                <a style="padding-top: 20px;" class="nav-link" href="home.html">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a style="padding-top: 20px;" class="nav-link" href="#">EQUIPE</a>
+            </li>
+            <li class="nav-item">
+                <a data-toggle="modal" data-target="#contatoModal" style="padding-top: 20px;" class="nav-link" href="#">CONTATO</a>
+            </li>
+        </ul>
+
+        <button data-toggle="modal" data-target="#loginModal" style="border-radius: 10%;" type="button" class="btn-login btn btn-outline-primary btn-rounded waves-effect"><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-user" aria-hidden="false"></i><span style="font-size: 20px">ENTRAR</span></button>
+    </div>
+</nav>
+
+<section  class="content" id="secCadastroEmpresa">
+	<div style="margin-top: 150px;" class="container">
+		<div class="row">
+			<h1 style="margin-bottom: 20px;" class="col-md-12 centered-col">Cadastre sua empresa</h1>
+		</div>
+		<br>
+		<form>
+		<div class="row">
+
+			<div style="border-right: 1px solid lightgrey;" class="md-form col-md-4">
+			    <input required type="text" data-mask="00/00/0000" id="cadastroCNPJ" class="form-control">
+			    <label for="cadastroCNPJ"><b>CNPJ:</b></label>
+			</div>
+			<div class="md-form col-md-4">
+			    <input required type="text" id="cadastroNome" class="form-control">
+			    <label for="cadastroNome"><b>Nome:</b></label>
+			</div>
+			<div class="col-md-4">
+				<label for="cadastroLogo"><b style="color: #757575;">Logo:</b></label>
+				<input type="file" id="cadastroLogo">
+			</div>
+		</div>
+
+		<div class="row">
+			<div style="border-right: 1px solid lightgrey" class="md-form col-md-4">
+				<input required type="password" id="cadastroSenha" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Sua senha deve ter ao menos uma letra maíuscula, uma minúscula e um número" class="form-control">
+			    <label for="form2"><b>Senha para login:</b></label>
+			</div>
+			<div class="md-form col-md-4">
+				<input required type="text" id="cadastroSenha" class="form-control">
+			    <label for="form6"><b>Telefone:</b></label>
+			</div>
+			<div class="col-md-4">
+				<div style="padding-left: 15px;" class="form-inline">
+
+			<div id="radioinline" class="form-inline">
+			    <div class="form-group">
+			        <input name="group1" type="radio" id="cadastroPequeno" checked="checked">
+			        <label for="cadastroPequeno" style="padding-left: 3px;">  Pequeno porte</label>
+			    </div>
+
+			    <div class="form-group">
+			        <input name="group1" type="radio" id="cadastroMedio">
+			        <label for="cadastroMedio" style="padding-left: 3px;">  Médio porte</label>
+			    </div>
+
+			    <div class="form-group">
+			        <input name="group1" type="radio" id="cadastroGrande">
+			        <label for="cadastroGrande" style="padding-left: 3px;">  Grande porte</label>
+			    </div>
+			</div>
+		</div>
+			</div>
+		</div>
+		<div class="row">
+			<div style="border-right: 1px solid lightgrey;" class="md-form col-md-4">
+			    <input required type="password" id="cadastroConfirmar" class="form-control">
+			    <label for="cadastroConfirmar"><b>Confirmar senha:</b></label>
+			</div>
+			<div class="md-form col-md-4">
+				<input required type="email" id="form7" class="form-control">
+			    <label for="cadastroConfirmar"><b>E-mail:</b></label>
+			</div>
+
+		</div>
+		<div class="row">
+			<button  style="margin-top: 40px; margin-bottom:  40px;" type="submit" class="col-md-12 btn btn-success">CONCLUIR CADASTRO</button>
+		</div>
+
+		</form>
+	</div>
+</section>
+
+
+<footer style="margin-top: 0; color: black;" class="footer page-footer  amber darken-3 center-on-small-only">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="title">Siga a SOLARI nas redes sociais: </h5>
+                <div style="color: black;" class="social">
+              		<a class="fa fa-facebook " target="_blank" href="https://www.facebook.com/"></a>
+              		<a class="fa fa-twitter" target="_blank" href="https://www.twitter.com/"></a>
+              		<a class="fa fa-linkedin" target="_blank" href="https://www.linkedin.com/"></a>
+              		<a class="fa fa-google-plus" target="_blank" href="https://www.google.com/"></a>
+           		</div>
+            </div>
+            <div class="col-md-6">
+                <h5 class="title">Links Úteis</h5>
+                <ul>
+                    <li><a style="color: #006064;" href="http://www.fatecpg.edu.br/" target="_blank">FATEC-PG</a></li>
+                    <li><a style="color: #006064;" href="#!">TRABALHE CONOSCO</a></li>
+                    <li><a style="color: #006064;" data-toggle="modal" data-target="#contatoModal" href="#!">CONTATO</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div style="color: black;" class="container-fluid">
+            © 2017 Copyright: <a style="color: black;" href="https://www.facebook.com/vinicius.lima.1671" target="_blank"> Vinícius Lima </a>
+        </div>
+    </div>
+	</footer>
+
+	<script type="text/javascript" src="js/jquery.mask.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
