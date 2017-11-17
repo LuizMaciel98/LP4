@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
@@ -46,10 +46,10 @@
                 <a style="padding-top: 20px;" class="nav-link" href="home.html">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a style="padding-top: 20px;" class="nav-link" href="#">ESTOQUE</a>
+                <a style="padding-top: 20px;" class="nav-link" href="home_empresa.html">ESTOQUE</a>
             </li>
             <li class="nav-item">
-                <a style="padding-top: 20px;" class="nav-link" href="#">EQUIPE</a>
+                <a style="padding-top: 20px;" class="nav-link" href="equipe.html">EQUIPE</a>
             </li>
 
             <li class="nav-item">
@@ -77,7 +77,7 @@
       </div>
       </div>
 
-
+    
   </div>
 </section>
 <section class="tabela-estoque content">
@@ -132,17 +132,17 @@
 
  <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog cascading-modal z-depth-1" role="document">
-
+                
                 <div class="modal-content">
 
-
+                    
                     <div class="modal-header light-green white-text">
                         <h4 class="title"><i class="fa fa-plus"></i> Adicionar produto</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">×</span>
                                                     </button>
                     </div>
-
+                    
                     <div class="modal-body mb-0">
 
                         <p class="lead text-center">Cadastre as informações do produto</p>
@@ -168,12 +168,12 @@
                         <div class="text-center mt-1-half">
                           <button class="btn btn-outline-danger waves-effect" data-dismiss="modal">CANCELAR</button>
                             <input type="submit" class="btn btn-success" value="ADICIONAR">
-
+                            
                         </div>
                         </form>
                     </div>
                 </div>
-
+                
             </div>
         </div>
 
@@ -253,12 +253,6 @@
                                 }
 
                         </script>
-
-
-teste
-
-
-
                         <table id="minhaTabela" class="table table-bordered">
                           <thead>
                               <th>Código</th>
@@ -282,40 +276,90 @@ teste
         </div>
 
 
-
-
+    
+    
     <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog cascading-modal" role="document">
-
+           
             <div class="modal-content">
-
-
+    
+               
                 <div class="modal-header danger-color white-text">
-                    <h4 class="title"><i class="fa fa-newspaper-o"></i> Subscription form</h4>
+                    <h4 class="title"><i class="fa fa-newspaper-o"></i> Excluir produto</h4>
                     <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
+                
                 <div class="modal-body mb-0">
-
+    
                     <div class="md-form form-sm">
                         <i class="fa fa-cube prefix"></i>
-                        <input type="password" id="form27" class="form-control">
-                        <label for="form27">Nome do produto</label>
+                        <input type="email" id="excluirProduto" class="form-control">
+                        <label for="excluirProduto">Nome do produto</label>
                     </div>
-
-
+    
+                        
                     <div class="text-center mt-1-half">
                         <button class="btn btn-success mb-1">EXCLUIR <i class="fa fa-check ml-1"></i></button>
                     </div>
-
+    
                 </div>
             </div>
-
+           
         </div>
     </div>
+    
+    <div class="modal fade" id="contatoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog cascading-modal" role="document">
+                        <!--Content-->
+                        <div class="modal-content">
 
+                            <!--Header-->
+                            <div class="modal-header amber darken-3">
+                                <h4 class="title"><i class="fa fa-pencil"></i> Fale conosco!</h4>
+                                <button type="button" class="close waves-effect" style="color: black;" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                            </div>
+                            <!--Body-->
+                            <div class="modal-body mb-0">
+                            	<form>
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input type="text" id="contatoEmail" class="form-control">
+                                    <label for="contatoEmail">Seu e-mail</label>
+                                </div>
+
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-user prefix"></i>
+                                    <input type="text" id="contatoNome" class="form-control">
+                                    <label for="contatoNome">Seu nome</label>
+                                </div>
+
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-tag prefix"></i>
+                                    <input type="text" id="contatoAssunto" class="form-control">
+                                    <label for="contatoAssunto">Assunto</label>
+                                </div>
+
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-pencil prefix"></i>
+                                    <textarea type="text" id="contatoMensagem" class="md-textarea mb-0"></textarea>
+                                    <label for="contatoMensagem">Mensagem</label>
+                                </div>
+
+                                <div class="text-center mt-1-half">
+                                    <button type="submit" class="btn btn-warning mb-2" ><span style="color: black;">Enviar </span><i style="color: black !important;" class="fa fa-send ml-1"></i></button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
+                </div>
+        
 
 
 
@@ -350,7 +394,7 @@ teste
 
 <footer style="margin-top: 0; color: black;" class="footer page-footer  amber darken-3 center-on-small-only">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row">          
             <div class="col-md-6">
                 <h5 class="title">Siga a SOLARI nas redes sociais: </h5>
                 <div style="color: black;" class="social">
@@ -367,7 +411,7 @@ teste
                     <li><a style="color: #006064;" href="#!">TRABALHE CONOSCO</a></li>
                     <li><a style="color: #006064;" data-toggle="modal" data-target="#contatoModal" href="#!">CONTATO</a></li>
                 </ul>
-            </div>
+            </div>      
         </div>
     </div>
     <div class="footer-copyright">
@@ -375,10 +419,10 @@ teste
             © 2017 Copyright: <a style="color: black;" href="https://www.facebook.com/vinicius.lima.1671" target="_blank"> Vinícius Lima </a>
         </div>
     </div>
-	</footer>
+</footer>
 
-
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> 
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>

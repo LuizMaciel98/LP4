@@ -1,7 +1,7 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
+	height: 100%;	
 }
 
 @font-face {
@@ -152,7 +152,7 @@ body {
   display: table-row;
   height: 100%;
   margin-top: 150px;
-
+ 
 }
 
 .footer {
@@ -170,7 +170,7 @@ body {
 
 .tabela-estoque table, th, td {
    border: 1px solid black !important;
-
+   
 }
 
 .fa-refresh:hover {
@@ -198,3 +198,180 @@ input[type=number]::-webkit-outer-spin-button {
 .nav-link .active {
 	color: white !important;
 }
+
+.equipe {
+/*    background-color: #e0f8fa;*/
+    background: linear-gradient(#3cabb7, #0b6c70);
+}
+
+#equipe {
+	text-align: center;
+	
+	padding: 150px 40px;
+}
+
+#equipe h2 {
+	font-size: 500%;
+	margin-bottom: 30px;
+    font-family: yeah-papa;
+    text-align: center;
+    color: #FFA000;
+    padding-bottom: 20px;
+}
+
+
+#foto img {
+	border: 2px solid black;
+	filter: grayscale(100%);
+	transition: filter 0.5s;
+	transition: border 0.5s;
+
+}
+
+#descricao {
+	margin: 20px 0;
+}
+
+#descricao h3 {
+	font-size: 275%;
+}
+
+.social [class*="fa fa-"] {
+    background-color: #333;
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    margin: auto 3px;
+    width: 35px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease 0s;
+}
+
+.fa-twitter:hover { 
+    background-color: #46c0fb; 
+}
+
+#primeiro-membro, #segundo-membro, #terceiro-membro, #quarto-membro, #coracao {
+	opacity: 0;
+}
+
+#primeiro-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#segundo-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#terceiro-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#quarto-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#primeiro-membro:hover #foto img{
+	border: 2px solid #FFA000;
+}
+
+#segundo-membro:hover #foto img{
+	filter: grayscale(0%);
+	border: 2px solid #FFA000;
+}
+
+#terceiro-membro:hover #foto img{
+	filter: grayscale(0%);
+	border: 2px solid #FFA000;
+}
+
+#quarto-membro:hover #foto img{
+	filter: grayscale(0%);
+	border: 2px solid #FFA000;
+}
+
+
+#primeiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#primeiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#primeiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#segundo-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#segundo-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#segundo-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#terceiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#terceiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#terceiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#quarto-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#quarto-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#quarto-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#quarto-membro:hover #descricao h3 {
+	color: #FFA000;
+}
+
+#quarto-membro:hover #descricao h4 {
+	color: #ce7f00;
+}
+
+#terceiro-membro:hover #descricao h3 {
+	color: #FFA000;
+}
+
+#terceiro-membro:hover #descricao h4 {
+	color: #ce7f00
+}
+
+#segundo-membro:hover #descricao h3 {
+	color: #FFA000;
+}
+
+#segundo-membro:hover #descricao h4 {
+	color: #ce7f00;
+}
+
+#primeiro-membro:hover #descricao h3 {
+	color: #FFA000;
+}
+
+#primeiro-membro:hover #descricao h4 {
+	color: #ce7f00;
+}
+

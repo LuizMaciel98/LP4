@@ -92,16 +92,16 @@
 .hidden-md-down {
   @media (max-width: $medium-screen){
     display: none!important;
-  }
+  }  
 }
 
 .mb-r {
   @media (min-width: $medium-screen){
     margin-bottom: 3rem!important;
-  }
+  }   
   @media (max-width: $medium-screen){
     margin-bottom: 2rem!important;
-  }
+  }  
 }
 
 .font-bold {
@@ -121,7 +121,7 @@
   border-top: 1px solid #666;
 }
 
-// Blockquote contextual
+// Blockquote contextual 
 .blockquote {
   .bq-title {
     font-weight: 400;
