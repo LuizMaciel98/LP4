@@ -1,3 +1,4 @@
+<div class="modal fade" id="modalRecuperarSenha" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog cascading-modal" role="document">
            
             <div class="modal-content">
@@ -20,7 +21,7 @@
     
                         
                     <div class="text-center mt-1-half">
-                        <button class="btn btn-success mb-1">EXCLUIR <i class="fa fa-check ml-1"></i></button>
+                        <button class="btn btn-success mb-1">RECUPERAR <i class="fa fa-check ml-1"></i></button>
                     </div>
     
                 </div>
