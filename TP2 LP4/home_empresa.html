@@ -196,8 +196,10 @@
                         <form>
                         <div class="md-form form-sm">
                             <i class="fa fa-user prefix"></i>
-                            <input name="nomeComprador" required type="text" id="vendaComprador  " class="form-control">
+                            
+                            <input name="nomeComprador" required type="text" id="vendaComprador" class="form-control">
                             <label for="vendaComprador">Nome do comprador</label>
+                            
                         </div>
 
                         <div class="md-form form-sm">
@@ -212,7 +214,7 @@
                             <label for="vendaQuantidade">Quantidade</label>
                         </div>
 
-                        <input onclick="inserirLinhaTabela();" type="button" value="Adicionar na lista" class="btn btn-default">
+                        <input onclick="RVValidacao();" type="button" value="Adicionar na lista" class="btn btn-default">
 
                         <div class="md-form form-sm">
                             <i class="fa fa-dollar prefix"></i>
@@ -222,6 +224,7 @@
 
                         <span>Lista de itens da venda: </span>
 
+                        <!--Comando javascript para atualização da tabela da lista de itens para venda-->
                         <script language="javascript">
                                 function inserirLinhaTabela() {
 
@@ -247,12 +250,29 @@
                                     newCell = newRow.insertCell(2);
                                     newCell.innerHTML = document.getElementById("vendaQuantidade").value;
 
-
-
-
                                 }
 
                         </script>
+                        
+                        <!--Comando javascript para validação dos campos da popup de realizar vendas--> 
+                        <script language="javascript">
+
+                            function RVValidacao() {
+                                var nome = document.getElementById("vendaComprador").value;
+                                var produto = document.getElementById("vendaProduto").value;
+                                var quantidade = document.getElementById("vendaQuantidade").value;
+                                if(nome == "" || produto == "" || quantidade == "" ){
+                                    alert('Não deixe campos vazios');
+                                return;
+                                }else if(isNaN(quantidade)){
+                                    alert('Valor da quantidade invalido');
+                                }else if(/^[A-Za-z\s]+$/.test(nome)!= true){
+                                    alert('Insira um nome valido');
+                                }
+
+                            }
+                        </script>
+                        
                         <table id="minhaTabela" class="table table-bordered">
                           <thead>
                               <th>Código</th>
