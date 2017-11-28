@@ -34,7 +34,7 @@
                 <!--Footer-->
                 <div class="modal-footer">
                     <div class="options text-center text-md-right mt-1">
-                        <p>Não possui uma conta? <a href="cadastro_empresa.html">Cadastre-se</a></p>
+                        <p>Não possui uma conta? <a href="cadastro_empresa.php">Cadastre-se</a></p>
                         <p>Esqueceu a<a data-toggle="modal" data-target="#modalRecuperarSenha" data-dismiss="modal" href="#"> senha?</a></p>
                     </div>
                     <button type="button" class="btn btn-outline-warning waves-effect ml-auto" data-dismiss="modal">Fechar</button>
