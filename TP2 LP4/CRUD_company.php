@@ -8,7 +8,7 @@ function InsertCompany($cnpj, $name, $password, $phone, $email) {
 	$con = getConnection();
 	$query = "INSERT INTO company VALUES(?, ?, ?, ?, ?)";
 	$stmt = mysqli_prepare($con, $query);
-	mysqli_bind_param($stmt, "sssss", $cnpj, $name, $password, $phone, $email);
+	mysqli_stmt_bind_param($stmt, "sssss", $cnpj, $name, $password, $phone, $email);
 	mysqli_execute($stmt);
 }
 
