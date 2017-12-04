@@ -28,7 +28,16 @@ function SelectUserByName($name) {
 	$query = "SELECT * FROM company WHERE nm_company = $name";
 	return mysqli_query($query);
 }
-
+function SelectLoginAndPass($login, $pass){
+    $con = getConnection();
+    $query = "SELECT * FROM company WHERE cd_cnpj = '$login' AND cd_password = '$pass'";
+    return mysqli_query($con, $query);
+}
+function SelectLoginCompanyName($login){
+    $con = getConnection();
+    $query = "SELECT nm_company FROM company WHERE cd_cnpj = '$login'";
+    return mysqli_query($con, $query);
+}
 //UPDATES
 function UpdateCompany($old_cnpj, $name, $cnpj, $password, $phone, $email) {
 	$con = getConnection();

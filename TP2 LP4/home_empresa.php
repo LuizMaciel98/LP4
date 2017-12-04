@@ -1,67 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="apple-touch-icon" sizes="57x57" href="res/img/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="res/img/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="res/img/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="res/img/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="res/img/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="res/img/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="res/img/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="res/img/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="res/img/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="res/img/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="res/img/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="res/img/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="res/img/favicon-16x16.png">
-	<link rel="manifest" href="res/img/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="res/img/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
-	<title>Solari</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">   
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<?php include 'includes/head.php'; ?>
 </head>
 
 <body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light amber darken-2 scrolling-navbar">
+<?php
+    session_start();
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-        aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
+    include('includes/navbar.php');
+    include 'includes/modal_contato.php';
+    include 'includes/modal_login.php';
+    include 'includes/modal_recuperar_senha.php';
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul  class="navbar-nav mr-auto">
-        	<li class="nav-item">
-                <a style="font-size: 35px;" class="nav-link" href="#">S<i class="fa fa-sun-o" aria-hidden="true"></i>LARI</a>
-            </li>
-            <li class="nav-item">
-                <a style="padding-top: 20px;" class="nav-link" href="home.html">HOME <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a style="padding-top: 20px;" class="nav-link" href="home_empresa.html">ESTOQUE</a>
-            </li>
-            <li class="nav-item">
-                <a style="padding-top: 20px;" class="nav-link" href="equipe.html">EQUIPE</a>
-            </li>
-
-            <li class="nav-item">
-                <a data-toggle="modal" data-target="#contatoModal" style="padding-top: 20px;" class="nav-link" href="#">CONTATO</a>
-            </li>
-        </ul>
-
-        <button style="border-radius: 10%;" type="button" class="btn-login btn btn-info btn-rounded waves-effect"><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-home" aria-hidden="false"></i><span style="font-size: 20px">MINHA EMPRESA</span></button>
-
-        <a href="home.html"><button style="border-radius: 10%;" type="button" class="btn-login btn btn-danger btn-rounded waves-effect"><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-power-off" aria-hidden="false"></i><span style="font-size: 20px">SAIR</span></button></a>
-    </div>
-</nav>
+?>
 
 <section class="acoes-estoque">
   <div class="container">
@@ -77,7 +29,7 @@
       </div>
       </div>
 
-    
+
   </div>
 </section>
 <section class="tabela-estoque content">
@@ -132,21 +84,21 @@
 
  <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog cascading-modal z-depth-1" role="document">
-                
+
                 <div class="modal-content">
 
-                    
+
                     <div class="modal-header light-green white-text">
                         <h4 class="title"><i class="fa fa-plus"></i> Adicionar produto</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">×</span>
                                                     </button>
                     </div>
-                    
+
                     <div class="modal-body mb-0">
 
                         <p class="lead text-center">Cadastre as informações do produto</p>
-                        
+
                         <div class="md-form form-sm">
                             <i class="fa fa-cube prefix"></i>
                             <input required type="text" id="adicionarProduto" class="form-control">
@@ -168,10 +120,10 @@
                         <div class="text-center mt-1-half">
                           <button class="btn btn-outline-danger waves-effect" data-dismiss="modal">CANCELAR</button>
                             <input onclick="CPValidacao();" type="submit" class="btn btn-success" value="ADICIONAR">
-                            
+
                         </div>
-                        
-                        <!--Comando javascript para validação dos campos da popup de CADASTRAR PRODUTO--> 
+
+                        <!--Comando javascript para validação dos campos da popup de CADASTRAR PRODUTO-->
                         <script language="javascript">
 
                             function CPValidacao() {
@@ -193,12 +145,12 @@
                                     alert('Aqui vem o comando para inserir o produto no Banco de Dados')
                                 }
                             }
-                            
+
                         </script>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
@@ -218,18 +170,18 @@
                     <div class="modal-body mb-0">
 
                         <p class="lead text-center">Cadastre as informações da venda</p>
-                        
+
                         <div class="md-form form-sm">
                             <i class="fa fa-user prefix"></i>
-                            
+
                             <input name="nomeComprador" required type="text" id="vendaComprador" class="form-control">
                             <label for="vendaComprador">Nome do comprador</label>
-                            
+
                         </div>
 
                         <div class="md-form form-sm">
                             <i class="fa fa-cube prefix"></i>
-                            
+
                             <input list="brosers" name="produtoNome" required id="vendaProduto" class="form-control">
                             <datalist id="brosers">
                                 <option value="Macarrão">
@@ -259,7 +211,7 @@
 
                         <!--Comando javascript para atualização da tabela da lista de itens para venda-->
                         <script language="javascript">
-                            
+
                                 function inserirLinhaTabela() {
 
                                     // Captura a referência da tabela com id “minhaTabela”
@@ -277,24 +229,24 @@
 
                                     newCell = newRow.insertCell(1);
                                     newCell.innerHTML = document.getElementById("vendaProduto").value;
-                                    
+
 
                                     newCell = newRow.insertCell(2);
                                     newCell.innerHTML = document.getElementById("vendaQuantidade").value;
-                                    
+
                                     //Apaga os valores dos inputs
                                     document.getElementById("vendaProduto").value = "";
                                     document.getElementById("vendaQuantidade").value = "";
-                                    
-                                    
-                                    
+
+
+
                                     //A seguir viria a função php para salvar a venda no banco de dados
-                                    
+
                                 }
 
                         </script>
-                        
-                        <!--Comando javascript para validação dos campos da popup de REALIZAR VENDAS--> 
+
+                        <!--Comando javascript para validação dos campos da popup de REALIZAR VENDAS-->
                         <script language="javascript">
 
                             function RVValidacao() {
@@ -316,7 +268,7 @@
 
                             }
                         </script>
-                        
+
                         <form>
                         <table id="minhaTabela" class="table table-bordered">
                           <thead>
@@ -334,7 +286,7 @@
 
                         </div>
                         </form>
-                        
+
                     </div>
                 </div>
 
@@ -342,23 +294,23 @@
         </div>
 
 
-    
-    
+
+
     <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog cascading-modal" role="document">
-           
+
             <div class="modal-content">
-    
-               
+
+
                 <div class="modal-header danger-color white-text">
                     <h4 class="title"><i class="fa fa-newspaper-o"></i> Excluir produto</h4>
                     <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                
+
                 <div class="modal-body mb-0">
-    
+
                     <div class="md-form form-sm">
                         <i class="fa fa-cube prefix"></i>
 
@@ -372,134 +324,21 @@
                             </datalist>
                         <label for="excluirProduto">Nome do produto</label>
                     </div>
-    
-                        
+
+
                     <div class="text-center mt-1-half">
                         <button class="btn btn-success mb-1">EXCLUIR <i class="fa fa-check ml-1"></i></button>
                     </div>
-    
+
                 </div>
             </div>
-           
+
         </div>
     </div>
-    
-    <div class="modal fade" id="contatoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog cascading-modal" role="document">
-                        <!--Content-->
-                        <div class="modal-content">
 
-                            <!--Header-->
-                            <div class="modal-header amber darken-3">
-                                <h4 class="title"><i class="fa fa-pencil"></i> Fale conosco!</h4>
-                                <button type="button" class="close waves-effect" style="color: black;" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                            </div>
-                            <!--Body-->
-                            <div class="modal-body mb-0">
-                            	<form>
-                                <div class="md-form form-sm">
-                                    <i class="fa fa-envelope prefix"></i>
-                                    <input type="text" id="contatoEmail" class="form-control">
-                                    <label for="contatoEmail">Seu e-mail</label>
-                                </div>
+<?php
+    include 'includes/footer2.php';
 
-                                <div class="md-form form-sm">
-                                    <i class="fa fa-user prefix"></i>
-                                    <input type="text" id="contatoNome" class="form-control">
-                                    <label for="contatoNome">Seu nome</label>
-                                </div>
-
-                                <div class="md-form form-sm">
-                                    <i class="fa fa-tag prefix"></i>
-                                    <input type="text" id="contatoAssunto" class="form-control">
-                                    <label for="contatoAssunto">Assunto</label>
-                                </div>
-
-                                <div class="md-form form-sm">
-                                    <i class="fa fa-pencil prefix"></i>
-                                    <textarea type="text" id="contatoMensagem" class="md-textarea mb-0"></textarea>
-                                    <label for="contatoMensagem">Mensagem</label>
-                                </div>
-
-                                <div class="text-center mt-1-half">
-                                    <button type="submit" class="btn btn-warning mb-2" ><span style="color: black;">Enviar </span><i style="color: black !important;" class="fa fa-send ml-1"></i></button>
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>
-                        <!--/.Content-->
-                    </div>
-                </div>
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<footer style="margin-top: 0; color: black;" class="footer page-footer  amber darken-3 center-on-small-only">
-    <div class="container-fluid">
-        <div class="row">          
-            <div class="col-md-6">
-                <h5 class="title">Siga a SOLARI nas redes sociais: </h5>
-                <div style="color: black;" class="social">
-              		<a class="fa fa-facebook " target="_blank" href="https://www.facebook.com/"></a>
-              		<a class="fa fa-twitter" target="_blank" href="https://www.twitter.com/"></a>
-              		<a class="fa fa-linkedin" target="_blank" href="https://www.linkedin.com/"></a>
-              		<a class="fa fa-google-plus" target="_blank" href="https://www.google.com/"></a>
-           		</div>
-            </div>
-            <div class="col-md-6">
-                <h5 class="title">Links Úteis</h5>
-                <ul>
-                    <li><a style="color: #006064;" href="http://www.fatecpg.edu.br/" target="_blank">FATEC-PG</a></li>
-                    <li><a style="color: #006064;" href="#!">TRABALHE CONOSCO</a></li>
-                    <li><a style="color: #006064;" data-toggle="modal" data-target="#contatoModal" href="#!">CONTATO</a></li>
-                </ul>
-            </div>      
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div style="color: black;" class="container-fluid">
-            © 2017 Copyright: <a style="color: black;" href="https://www.facebook.com/vinicius.lima.1671" target="_blank"> Vinícius Lima </a>
-        </div>
-    </div>
-</footer>
-
-	
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> 
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+?>
 </body>
 </html>

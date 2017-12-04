@@ -2,7 +2,11 @@
 <html>
 <?php include 'includes/head.php'; ?>
 <body>
-	<?php include 'includes/navbar.php'; ?>
+	<?php include 'includes/navbar.php';
+    include 'includes/modal_contato.php';
+    include 'includes/modal_login.php';
+    include 'includes/modal_recuperar_senha.php';
+    ?>
 
 <section  class="content" id="secCadastroEmpresa">
 	<div style="margin-top: 150px;" class="container">
@@ -130,10 +134,8 @@
                 </div>
     
 <?php
-include 'includes/footer2.php';
-include 'includes/modal_contato.php';
-include 'includes/modal_login.php';
-include 'includes/modal_recuperar_senha.php';
+    include 'includes/footer2.php';
+
 ?>
 </body>
 </html>

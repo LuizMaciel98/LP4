@@ -12,7 +12,7 @@
                 </div>
                 <!--Body-->
                 <div class="modal-body">
-                	<form>
+                	<form method="post" action="PHPs/login.php">
                     <div class="md-form form-sm">
                         <i class="fa fa-id-card prefix"></i>
                         

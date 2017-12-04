@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
-<?php
-include 'includes/head.php';
-?>
+<head>
+	<?php include 'includes/head.php'; ?>
+</head>
+
 <body>
+
 <?php
-include 'includes/navbar.php';
+    session_start();
+
+    include 'includes/navbar.php';
+    include 'includes/modal_contato.php';
+    include 'includes/modal_login.php';
+    include 'includes/modal_recuperar_senha.php';
 ?>
+
 
 	<section class="wave">
 		<div class="container-fluid" id="intro">
@@ -31,8 +39,6 @@ include 'includes/navbar.php';
 			</div>
 		</div>
 		<div class="row" id="beneficios">
-                
-                
 
 		
 			<div class="col-sm-4 centered-col">
@@ -132,11 +138,7 @@ include 'includes/navbar.php';
 			<br><br><br>
 		</div>
 	</section>
-<?php
-include 'includes/footer.php';
-include 'includes/modal_contato.php';
-include 'includes/modal_login.php';
-include 'includes/modal_recuperar_senha.php';
-?>
+
+<?php include("includes/footer.php"); ?>
 </body>
 </html>

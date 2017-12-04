@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_SESSION["cnpj"])) {
+if(!isset($_SESSION["cnpj"])) {
 	include 'navbar_deslogada.php';
 }
 else

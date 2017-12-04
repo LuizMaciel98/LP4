@@ -1,3 +1,4 @@
+<!--Modal: Contact form-->
                 <div class="modal fade" id="contatoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog cascading-modal" role="document">
                         <!--Content-->
@@ -40,9 +41,9 @@
                                 <div class="text-center mt-1-half">
                                     <button type="submit" class="btn btn-warning mb-2" ><span style="color: black;">Enviar </span><i style="color: black !important;" class="fa fa-send ml-1"></i></button>
                                 </form>
-                            </div>
+                                </div>
 
-                        </div>
+                            </div>
                         </div>
                         <!--/.Content-->
                     </div>

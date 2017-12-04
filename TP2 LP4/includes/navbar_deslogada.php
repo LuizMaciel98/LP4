@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul  class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a style="font-size: 35px;" class="nav-link" href="#">S<i class="fa fa-sun-o" aria-hidden="true"></i>LARI</a>
+                <a style="font-size: 35px;" class="nav-link" href="home.php">S<i class="fa fa-sun-o" aria-hidden="true"></i>LARI</a>
             </li>
             <li class="nav-item">
-                <a style="padding-top: 20px;" class="nav-link" href="home.html">HOME <span class="sr-only">(current)</span></a>
+                <a style="padding-top: 20px;" class="nav-link" href="home.php">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a style="padding-top: 20px;" class="nav-link" href="equipe.html">EQUIPE</a>
+                <a style="padding-top: 20px;" class="nav-link" href="equipe.php">EQUIPE</a>
             </li>
             <li class="nav-item">
                 <a data-toggle="modal" data-target="#contatoModal" style="padding-top: 20px;" class="nav-link" href="#">CONTATO</a>
