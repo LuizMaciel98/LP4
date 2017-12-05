@@ -13,6 +13,9 @@
     include 'includes/modal_contato.php';
     include 'includes/modal_login.php';
     include 'includes/modal_recuperar_senha.php';
+    include 'CRUD_company.php';
+    
+    $total = mysqli_fetch_array(SelectTotalCompany());
 ?>
 
 
@@ -118,7 +121,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 centered-col">
-					<h2 id="txt-capa"><span style="color: #FFD460;">00</span> grandes empresas já usam o nosso serviço!</h2>
+					<h2 id="txt-capa"><span style="color: #FFD460;"><?php if($total[0] < 10){echo 0 . $total[0];}else{echo $total[0];}?></span> grandes empresas já usam o nosso serviço!</h2>
 				</div>
 			</div>
 			<br>
@@ -132,7 +135,11 @@
 
 			<div class="row">
                 <div class="col-md-12">
-				<a href="cadastro_empresa.html"><button type="button"  class="btn btn-deep-orange waves-effect col-sm-12 centered-col animated pulse infinite" style="font-size: 125%">Gostou? Que tal começar agora? <i style = "bottom: 2px;" class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+                <?php if(!isset($_SESSION['cnpj'])){?>
+				    <a href="cadastro_empresa.php"><button type="button"  class="btn btn-deep-orange waves-effect col-sm-12 centered-col animated pulse infinite" style="font-size: 125%">Gostou? Que tal começar agora? <i style = "bottom: 2px;" class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+				<?php }else{ ?>
+                    <a href="home_empresa.php"><button type="button"  class="btn btn-deep-orange waves-effect col-sm-12 centered-col animated pulse infinite" style="font-size: 125%">Cadastre seu próprio estoque agora mesmo! <i style = "bottom: 2px;" class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+                <?php } ?>
 			</div>
         </div>
 			<br><br><br>

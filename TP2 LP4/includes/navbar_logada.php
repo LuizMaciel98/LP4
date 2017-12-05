@@ -25,9 +25,9 @@
                 <a data-toggle="modal" data-target="#contatoModal" style="padding-top: 20px;" class="nav-link" href="#">CONTATO</a>
             </li>
         </ul>
+        
+        <a href="home_empresa.php"><button style="border-radius: 10%;" type="button" class="btn-login btn btn-info btn-rounded waves-effect" ><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-home" aria-hidden="false"></i><span style="font-size: 20px"><?php echo $_SESSION['companyName'];?></span></button></a>
 
-        <button style="border-radius: 10%;" type="button" class="btn-login btn btn-info btn-rounded waves-effect"><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-home" aria-hidden="false"></i><span style="font-size: 20px"><?php echo $_SESSION['companyName'];?></span></button>
-
-        <button style="border-radius: 10%;" type="button" class="btn-login btn btn-danger btn-rounded waves-effect"><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-power-off" aria-hidden="false"></i><span style="font-size: 20px">SAIR</span></button>
+        <a href="PHPs/logoff.php"><button style="border-radius: 10%;" type="button" class="btn-login btn btn-danger btn-rounded waves-effect" ><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-power-off" aria-hidden="false" ></i><span style="font-size: 20px">SAIR</span></button></a>
     </div>
 </nav>

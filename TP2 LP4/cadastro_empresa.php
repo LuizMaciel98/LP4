@@ -2,10 +2,19 @@
 <html>
 <?php include 'includes/head.php'; ?>
 <body>
-	<?php include 'includes/navbar.php';
+	<?php 
+    session_start();
+    
+    if(isset($_SESSION['cnpj'])){
+        header("Location: home.php");
+    }
+    
+    include 'includes/navbar.php';
     include 'includes/modal_contato.php';
     include 'includes/modal_login.php';
     include 'includes/modal_recuperar_senha.php';
+    
+    
     ?>
 
 <section  class="content" id="secCadastroEmpresa">

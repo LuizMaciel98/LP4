@@ -38,6 +38,11 @@ function SelectLoginCompanyName($login){
     $query = "SELECT nm_company FROM company WHERE cd_cnpj = '$login'";
     return mysqli_query($con, $query);
 }
+function SelectTotalCompany(){
+    $con = getConnection();
+    $query = "SELECT COUNT(*) FROM company";
+    return mysqli_query($con, $query);
+}
 //UPDATES
 function UpdateCompany($old_cnpj, $name, $cnpj, $password, $phone, $email) {
 	$con = getConnection();

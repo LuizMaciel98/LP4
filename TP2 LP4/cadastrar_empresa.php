@@ -1,6 +1,12 @@
 <?php
 header('Location: home.php');
 include 'CRUD_company.php';
+session_start();
+    
+if(isset($_SESSION['cnpj'])){
+    header("Location: home.php");
+}
+
 $cnpj = $_POST["cnpj"];
 $name = $_POST["name"];
 $password = $_POST["pass"];
