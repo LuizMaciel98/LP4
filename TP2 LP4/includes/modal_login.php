@@ -26,7 +26,7 @@
                         <label for="form31">Sua senha</label>
                     </div>
 
-                    <label class="checkbox-inline" style="bottom: 2px;"><input type="checkbox" name="manterConectado" value=""> Mantenha-me conectado</label>
+                    <label class="checkbox-inline" style="bottom: 2px;"><input type="checkbox" name="manterConectado" value="manter"> Mantenha-me conectado</label>
     
                     <div class="text-center mt-2">
                         <button type="submit" class="btn btn-warning"><span style="color: black;">Logar <i style="color: black !important;" class="fa fa-sign-in ml-1"></i></span></button>

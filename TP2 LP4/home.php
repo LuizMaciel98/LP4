@@ -7,13 +7,12 @@
 <body>
 
 <?php
-    session_start();
 
     include 'includes/navbar.php';
     include 'includes/modal_contato.php';
     include 'includes/modal_login.php';
     include 'includes/modal_recuperar_senha.php';
-    include 'CRUD_company.php';
+    
     
     $total = mysqli_fetch_array(SelectTotalCompany());
 ?>

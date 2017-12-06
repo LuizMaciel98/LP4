@@ -25,4 +25,19 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <?php 
+        include 'CRUD_company.php';
+        session_start();
+    
+        if(count($_COOKIE) > 1){
+            $res1 = SelectLoginAndPass($_COOKIE["cnpj"], $_COOKIE["pass"]);
+            $res2 = mysqli_fetch_array(SelectLoginCompanyName($_COOKIE["cnpj"]));
+
+            if(mysqli_num_rows($res1) > 0 ){
+                $_SESSION['cnpj'] = $_COOKIE["cnpj"];
+                $_SESSION['pass'] = $_COOKIE["pass"];
+                $_SESSION['companyName'] = $_COOKIE["name"];
+            }
+        }
+    ?>
 </head>
