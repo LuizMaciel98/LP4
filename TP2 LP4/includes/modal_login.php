@@ -25,10 +25,14 @@
                         <input type="password" id="form31" name="senhaEmpresa" class="form-control">
                         <label for="form31">Sua senha</label>
                     </div>
+
+                    <label class="checkbox-inline" style="bottom: 2px;"><input type="checkbox" name="manterConectado" value=""> Mantenha-me conectado</label>
     
                     <div class="text-center mt-2">
                         <button type="submit" class="btn btn-warning"><span style="color: black;">Logar <i style="color: black !important;" class="fa fa-sign-in ml-1"></i></span></button>
                     </div>
+
+
                 	</form>
                 </div>
                 <!--Footer-->
