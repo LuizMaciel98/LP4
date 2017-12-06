@@ -120,7 +120,7 @@
                         <div class="md-form">
                             <i style="top: 5px;" class="fa fa-table prefix"></i>
                             <input required style="margin-left: 50px;" type="button" class="btn btn-dark-green" id="adicionarCsv" value="Adicionar arquivo CSV" onclick="document.getElementById('file').click();" />
-                            <input type="file" style="display:none;" id="file" name="file"/>
+                            <input type="file" style="display:none;" id="file" name="file" accept=".csv" />
                         </div>
 
                         <div class="text-center mt-1-half">
