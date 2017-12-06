@@ -179,18 +179,18 @@
 
                         </div>
 
+                        
                         <div class="md-form form-sm">
-                            <i class="fa fa-cube prefix"></i>
-
-                            <input list="brosers" name="produtoNome" required id="vendaProduto" class="form-control">
-                            <datalist id="brosers">
-                                <option value="Macarrão">
-                                <option value="Feijão">
-                                <option value="Arroz">
-                                <option value="Leite">
-                                <option value="Pera">
-                            </datalist>
-                            <label for="vendaProduto">Produto</label>
+                                <i style="top: 7px;" class="fa fa-cube prefix"></i>
+                                <input required type="text" class="form-control" id="vendaProduto"  list = "brosers">
+                                <label style="color: #494949;" for="vendaProduto">Nome do produto</label>
+                                <datalist id="brosers">
+                                    <option value="Macarrão">
+                                    <option value="Feijão">
+                                    <option value="Arroz">
+                                    <option value="Leite">
+                                    <option value="Pera">
+                                </datalist>
                         </div>
 
                         <div class="md-form form-sm">
@@ -311,19 +311,18 @@
 
                 <div class="modal-body mb-0">
 
-                    <div class="md-form form-sm">
-                        <i class="fa fa-cube prefix"></i>
-
-                        <input list="excprd" required id="excluirProduto" class="form-control">
-                            <datalist id="excprd">
-                                <option value="Macarrão">
-                                <option value="Feijão">
-                                <option value="Arroz">
-                                <option value="Leite">
-                                <option value="Pera">
-                            </datalist>
-                        <label for="excluirProduto">Nome do produto</label>
-                    </div>
+                        <div class="md-form form-sm">
+                                <i style="top: 7px;" class="fa fa-cube prefix"></i>
+                                <input required type="text" class="form-control" id="excluirProduto"  list = "excprd">
+                                <label style="color: #494949;" for="excluirProduto">Nome do produto</label>
+                                <datalist id="excprd">
+                                    <option value="Macarrão">
+                                    <option value="Feijão">
+                                    <option value="Arroz">
+                                    <option value="Leite">
+                                    <option value="Pera">
+                                </datalist>
+                        </div>
 
 
                     <div class="text-center mt-1-half">
