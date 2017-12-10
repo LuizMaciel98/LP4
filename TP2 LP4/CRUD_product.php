@@ -1,5 +1,7 @@
 <?php
-include 'config.php';
+include_once 'config.php';
+if(!isset($_SESSION))
+	session_start();
 
 //cnpj, code, name, amount, price
 
@@ -15,7 +17,7 @@ function InsertProduct($cnpj, $code, $name, $amount, $price) {
 //SELECTS
 function SelectProducts($cnpj) {
 	$con = getConnection();
-	$query = "SELECT * FROM product WHERE cd_cnpj = $cnpj";
+	$query = "SELECT * FROM product WHERE cd_cnpj ='" .$cnpj. "'";
 	return mysqli_query($con, $query);
 }
 function SelectProductByCode($cnpj, $code) {

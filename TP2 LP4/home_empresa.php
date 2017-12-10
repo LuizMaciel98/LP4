@@ -34,52 +34,29 @@
 </section>
 <section class="tabela-estoque content">
 	<div style="padding-top: 50px;" class="container">
-	<div class="row">
-		<table class="table table-bordered table-hover">
-  <thead class="blue lighten-3">
-    <tr>
-      <th>Código</th>
-      <th>Nome</th>
-      <th>Quantidade</th>
-      <th>Valor</th>
-      <th>Excluir/Alterar</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-info">
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td><i style="margin-right: 5px;" class="fa fa-close fa-2x" aria-hidden="true"></i> <i style="margin-left: 5px;" class="fa fa-refresh fa-2x" aria-hidden="true"></i></td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td><i style="margin-right: 5px;" class="fa fa-close fa-2x" aria-hidden="true"></i> <i style="margin-left: 5px; " class="fa fa-refresh fa-2x" aria-hidden="true"></i></td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td><i style="margin-right: 5px;" class="fa fa-close fa-2x" aria-hidden="true"></i> <i style="margin-left: 5px;" class="fa fa-refresh fa-2x" aria-hidden="true"></i></td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">4</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td><i style="margin-right: 5px;" class="fa fa-close fa-2x" aria-hidden="true"></i> <i style="margin-left: 5px;" class="fa fa-refresh fa-2x" aria-hidden="true"></i></td>
-    </tr>
-  </tbody>
-</table>
+	<div class="row" id="tabela-de-produtos">
+		<?php
+        include 'includes/tabela_produtos.php';
+        ?>
 	</div>
 
 </div>
+<script type="text/javascript">
+    function AtualizarTabela() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                alert('foi');
+                alert(this.responseText);
+                document.getElementById("tabela-de-produtos").innerHTML = this.responseText;
+           }
+        };
+        url = "includes/tabela_produtos.php?a=0";
+        xhttp.open("GET", url, true);
+        xhttp.send();
+
+    }
+</script>
 </section>
 
 <?php
