@@ -64,7 +64,6 @@
                                     alert('Insira um nome valido para o produto');
                                     return;
                                 }else{//Caso todos os campos estejam certos
-                                    alert('Aqui vem o comando para inserir o produto no Banco de Dados');
                                     CadastrarProduto();
                                 }
                             }
@@ -73,7 +72,7 @@
                                 var xhttp = new XMLHttpRequest();
                                 xhttp.onreadystatechange = function() {
                                     if (this.readyState == 4 && this.status == 200) {
-                                        alert(this.responseText);
+                                            AtualizarTabela();
                                    }
                                 };
                                 url = "cadastrar_produto.php" + "?name=" + document.getElementById("adicionarProduto").value + "&qnt=" + document.getElementById("adicionarQuantidade").value + "&price=" + document.getElementById("adicionarValor").value;
