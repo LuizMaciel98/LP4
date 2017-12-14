@@ -30,7 +30,13 @@ function SelectProductName($cnpj, $name) {
 }
 
 //UPDATES
-
+function UpdateProductByCode($cnpj, $code, $newName, $newAmount, $newPrice) {
+	$con = getConnection();
+	$query = "UPDATE product Set nm_product = ?, qt_product = ?, vl_product = ? WHERE cd_cnpj = ? AND cd_product = ?";
+	$stmt = mysqli_prepare($con, $query);
+	mysqli_stmt_bind_param($stmt, "sidsi", $newName, $newAmount, $newPrice, $cnpj, $code);
+	mysqli_execute($stmt);
+}
 //DELETE
 function DeleteProducts($nome, $cnpj) {
     $con = getConnection();

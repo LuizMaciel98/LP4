@@ -69,11 +69,9 @@ echo
                 </form>
              </td>";
         echo "<td>
-                <form action='' method='get'>
-                    <button type='submit' style='background-color: Transparent;background-repeat:no-repeat; border: none;'>
+                    <button data-toggle='modal' onclick=\"EditarProduto('" .$lin['nm_product']. "', '" .$lin['qt_product']. "', '" .$lin['vl_product']. "', '" .$lin['cd_product']. "')\" type='button' style='background-color: Transparent;background-repeat:no-repeat; border: none;'>
                         <i style='margin-left: 5px;' class='fa fa-refresh fa-2x' aria-hidden='true'></i>
                     </button>
-                </form>
             </td>";
         echo "</tr>";
         echo "</tbody>";
@@ -86,6 +84,7 @@ echo
 	</div>
 
 </div>
+
 <script type="text/javascript">
     function AtualizarTabela() {
         var xhttp = new XMLHttpRequest();
@@ -94,7 +93,7 @@ echo
                 document.getElementById("tabela-de-produtos").innerHTML = this.responseText;
            }
         };
-        url = "includes/tabela_produtos.php?a=1";
+        url = "includes/tabela_produtos.php?";
         xhttp.open("GET", url, true);
         xhttp.send();
     }
@@ -103,7 +102,17 @@ echo
 
 <?php
 include 'includes/modal_produto.php';
+include 'includes/modal_editar_produto.php';
 ?>
+<script type="text/javascript">
+    function EditarProduto(nm, qnt, vl, cd) {
+       $("#modalEditarProduto").modal();
+       document.getElementById("NovoNome").value = nm;
+       document.getElementById("NovaQuantidade").value = qnt;
+       document.getElementById("NovoPreco").value = vl;
+       document.getElementById("cd").value = cd
+    }
+</script>
 
          <div class="modal fade" id="modalVenda" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog cascading-modal z-depth-1" role="document">
