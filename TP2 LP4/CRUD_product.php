@@ -36,7 +36,7 @@ function DeleteProducts($nome, $cnpj) {
     $con = getConnection();
     $query = "DELETE FROM product WHERE nm_product=? AND cd_cnpj=?";
     $stmt = mysqli_prepare($con, $query);
-	mysqli_stmt_bind_param($stmt, "ss", $id, $cnpj);
+	mysqli_stmt_bind_param($stmt, "ss",$nome, $cnpj);
 	mysqli_execute($stmt);
 }
 ?>

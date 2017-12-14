@@ -26,6 +26,7 @@
       </div>
       <div class="col-lg-4 centered-col">
         <button data-toggle="modal" data-target="#modalExcluir" class="  btn btn-danger"><i style="margin-right: 5px;" class="fa fa-close fa-lg" aria-hidden="true"></i> Remover produto</button>
+        
       </div>
       </div>
 
@@ -45,7 +46,8 @@ echo
           <th>Nome</th>
           <th>Quantidade</th>
           <th>Valor</th>
-          <th>Excluir/Alterar</th>
+          <th>Excluir</th>
+          <th>Alterar</th>
 
         </tr>
       </thead>";
@@ -58,14 +60,28 @@ echo
         echo "<td>" .$lin["nm_product"].  "</td>";
         echo "<td>" .$lin["qt_product"]. "</td>";
         echo "<td>" .$lin["vl_product"]. "</td>";
-        echo "<td><i style='margin-right: 5px;'' class='fa fa-close fa-2x' aria-hidden='true'></i> <i style='margin-left: 5px;'' class='fa fa-refresh fa-2x' aria-hidden='true'></i></td>";
+        echo "<td>
+                <form action='deletar_produto.php' method='get'>
+                    <input type='hidden' name='nomeProduto' value='".$lin["nm_product"]."'/>
+                    <button type='submit' style='background-color: Transparent;background-repeat:no-repeat; border: none;'>
+                        <i style='margin-right: 5px;' class='fa fa-close fa-2x' aria-hidden='true'></i>
+                    </button>
+                </form>
+             </td>";
+        echo "<td>
+                <form action='' method='get'>
+                    <button type='submit' style='background-color: Transparent;background-repeat:no-repeat; border: none;'>
+                        <i style='margin-left: 5px;' class='fa fa-refresh fa-2x' aria-hidden='true'></i>
+                    </button>
+                </form>
+            </td>";
         echo "</tr>";
         echo "</tbody>";
 
       }
 
       ?>
-      <tbody>
+      
 </table>
 	</div>
 
@@ -245,25 +261,19 @@ include 'includes/modal_produto.php';
                 </div>
 
                 <div class="modal-body mb-0">
-
+                <form action="deletar_produto.php" method="get">
                         <div class="md-form form-sm">
                                 <i style="top: 7px;" class="fa fa-cube prefix"></i>
-                                <input required type="text" class="form-control" id="excluirProduto"  list = "excprd">
+                                <input required type="text" name="nomeProduto" class="form-control" id="excluirProduto">
                                 <label style="color: #494949;" for="excluirProduto">Nome do produto</label>
-                                <datalist id="excprd">
-                                    <option value="Macarrão">
-                                    <option value="Feijão">
-                                    <option value="Arroz">
-                                    <option value="Leite">
-                                    <option value="Pera">
-                                </datalist>
+
                         </div>
 
 
                     <div class="text-center mt-1-half">
-                        <button class="btn btn-success mb-1">EXCLUIR <i class="fa fa-check ml-1"></i></button>
+                        <button type="submit" class="btn btn-success mb-1">EXCLUIR <i class="fa fa-check ml-1"></i></button>
                     </div>
-
+                </form>
                 </div>
             </div>
 
