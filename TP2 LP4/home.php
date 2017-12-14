@@ -124,12 +124,29 @@
 				</div>
 			</div>
 			<br>
-			<div class="row">
+			<div class="row" id="imgs-empresas">
 				<div class="img-capa col-sm-3 centered-col"><img style="opacity: 0.8;" width="150" heigth="150" src="res/img/praiamar-logo.png"></div>
 				<div class="img-capa col-sm-3 centered-col"><img style="opacity: 0.8;" width="150" heigth="150" src="res/img/outback-logo.png"></div>
 				<div class="img-capa col-sm-3 centered-col"><img style="opacity: 0.8;" width="150" heigth="150" src="res/img/bomprato-logo.png"></div>
 				<div class="img-capa col-sm-3 centered-col"><img style="opacity: 0.8;" width="150" heigth="150" src="res/img/mcdonalds-logo.png"></div>
 			</div>
+			<script type="text/javascript">
+			function AtualizarLogos() {
+       			var xhttp = new XMLHttpRequest();
+        		xhttp.onreadystatechange = function() {
+            	if (this.readyState == 4 && this.status == 200) {
+            		x = JSON.parse(this.responseText);
+            		for(i = 0; i < x.length; i++)
+                		document.getElementById("imgs-empresas").children[i].children[0].setAttribute("src", "logos/" + x[i] + ".png");
+           		}
+        	};
+        		url = "JSON_AJAX_LOGOS.php";
+        		xhttp.open("GET", url, true);
+        		xhttp.send();
+    		}
+    		AtualizarLogos();
+    		setInterval(AtualizarLogos(), 60000);
+			</script>
 			<br><br><br>
 
 			<div class="row">
