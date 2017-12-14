@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET))
-  include 'c:/xampp/htdocs/TP2/CRUD_product.php';
+  include 'CRUD_product.php';
 echo
 "<table class='table table-bordered table-hover'>
       <thead class='blue lighten-3'>

@@ -2,9 +2,9 @@
 //include 'config.php';
 session_start();
 include 'CRUD_product.php';
-$cnpj = $_SESSION	["cnpj"];
+$cnpj = $_SESSION['cnpj'];
 $code;
-$query = "SELECT cd_product FROM product WHERE cd_cnpj = '$cnpj' ORDER BY cd_product DESC LIMIT 1";
+$query = "SELECT cd_product FROM product WHERE cd_cnpj = '".$cnpj."' ORDER BY cd_product DESC LIMIT 1";
 
 if(mysqli_query(getConnection(), $query)) 
 	$code = mysqli_fetch_assoc(mysqli_query(getConnection(), $query))['cd_product'] + 1;
