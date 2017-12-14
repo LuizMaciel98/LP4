@@ -34,9 +34,12 @@
                         </div>
 
                         <div class="md-form">
+                            <form method="POST" action="upload_csv.php" enctype="multipart/form-data">
                             <i style="top: 5px;" class="fa fa-table prefix"></i>
                             <input required style="margin-left: 50px;" type="button" class="btn btn-dark-green" id="adicionarCsv" value="Adicionar arquivo CSV" onclick="document.getElementById('file').click();" />
-                            <input type="file" style="display:none;" id="file" name="file" accept=".csv" />
+                            <input type="file" style="display:none;" id="file" name="produtocsv" accept=".csv" />
+                            <input type="submit" name="enviar" value="Cadastrar csv">
+                            </form>
                         </div>
 
                         <div class="text-center mt-1-half">
