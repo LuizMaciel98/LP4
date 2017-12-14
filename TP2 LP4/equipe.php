@@ -7,7 +7,6 @@
 <body>
 
 <?php
-    session_start();
 
     include('includes/navbar.php');
     include 'includes/modal_contato.php';

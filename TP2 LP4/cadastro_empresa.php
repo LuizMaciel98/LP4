@@ -3,7 +3,6 @@
 <?php include 'includes/head.php'; ?>
 <body>
 	<?php 
-    session_start();
     
     if(isset($_SESSION['cnpj'])){
         header("Location: home.php");

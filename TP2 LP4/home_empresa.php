@@ -6,7 +6,6 @@
 
 <body>
 <?php
-    session_start();
 
     include('includes/navbar.php');
     include 'includes/modal_contato.php';
@@ -219,25 +218,20 @@ include 'includes/modal_produto.php';
                 </div>
 
                 <div class="modal-body mb-0">
-
-                        <div class="md-form form-sm">
-                                <i style="top: 7px;" class="fa fa-cube prefix"></i>
-                                <input required type="text" class="form-control" id="excluirProduto"  list = "excprd">
-                                <label style="color: #494949;" for="excluirProduto">Nome do produto</label>
-                                <datalist id="excprd">
-                                    <option value="Macarrão">
-                                    <option value="Feijão">
-                                    <option value="Arroz">
-                                    <option value="Leite">
-                                    <option value="Pera">
-                                </datalist>
-                        </div>
-
-
-                    <div class="text-center mt-1-half">
-                        <button class="btn btn-success mb-1">EXCLUIR <i class="fa fa-check ml-1"></i></button>
+                <form action="deletar_produto.php" method="post">
+                    <div class="md-form form-sm">
+                        <i style="top: 7px;" class="fa fa-cube prefix"></i>
+                        <input required type="text" name="nomeProduto" class="form-control" id="excluirProduto"  list = "excprd">
+                        <label style="color: #494949;" for="excluirProduto">Nome do produto</label>
+                        <!--<datalist id="excprd">
+                            <option value="">
+                        </datalist>-->
                     </div>
 
+                    <div class="text-center mt-1-half">
+                        <button type="submit" class="btn btn-success mb-1">EXCLUIR <i class="fa fa-check ml-1"></i></button>
+                    </div>
+                </form>
                 </div>
             </div>
 

@@ -1,7 +1,5 @@
 <?php
 include_once 'config.php';
-if(!isset($_SESSION))
-	session_start();
 
 //cnpj, code, name, amount, price
 
@@ -33,4 +31,12 @@ function SelectProductName($cnpj, $name) {
 
 //UPDATES
 
+//DELETE
+function DeleteProducts($nome, $cnpj) {
+    $con = getConnection();
+    $query = "DELETE FROM product WHERE nm_product=? AND cd_cnpj=?";
+    $stmt = mysqli_prepare($con, $query);
+	mysqli_stmt_bind_param($stmt, "ss", $id, $cnpj);
+	mysqli_execute($stmt);
+}
 ?>
