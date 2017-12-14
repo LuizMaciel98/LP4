@@ -1,6 +1,5 @@
 <?php
-if(isset($_GET))
-  include 'CRUD_product.php';
+include '../CRUD_product.php';
 echo
 "<table class='table table-bordered table-hover'>
       <thead class='blue lighten-3'>
