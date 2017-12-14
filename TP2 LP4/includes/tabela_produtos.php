@@ -13,7 +13,7 @@ echo
 
         </tr>
       </thead>";
-      session_start();
+        session_start();
       $cnpj = $_SESSION["cnpj"];
       $tab = SelectProducts($cnpj);
       while ($lin = mysqli_fetch_assoc($tab)) {
@@ -32,11 +32,9 @@ echo
                 </form>
              </td>";
         echo "<td>
-                <form action='' method='get'>
-                    <button type='submit' style='background-color: Transparent;background-repeat:no-repeat; border: none;'>
+                    <button data-toggle='modal' onclick=\"EditarProduto('" .$lin['nm_product']. "', '" .$lin['qt_product']. "', '" .$lin['vl_product']. "', '" .$lin['cd_product']. "')\" type='button' style='background-color: Transparent;background-repeat:no-repeat; border: none;'>
                         <i style='margin-left: 5px;' class='fa fa-refresh fa-2x' aria-hidden='true'></i>
                     </button>
-                </form>
             </td>";
         echo "</tr>";
         echo "</tbody>";
