@@ -1,7 +1,7 @@
 <?php
 include 'CRUD_product.php';
 session_start();
-header("location: home_empresa.php")
+header("location: home_empresa.php");
 
 $file = fopen($_FILES["produtocsv"]["tmp_name"], "r");
 $i = 1;
