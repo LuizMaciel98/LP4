@@ -8,10 +8,12 @@ echo
           <th>Nome</th>
           <th>Quantidade</th>
           <th>Valor</th>
-          <th>Excluir/Alterar</th>
+          <th>Excluir</th>
+          <th>Alterar</th>
 
         </tr>
       </thead>";
+      session_start();
       $cnpj = $_SESSION["cnpj"];
       $tab = SelectProducts($cnpj);
       while ($lin = mysqli_fetch_assoc($tab)) {
@@ -21,12 +23,24 @@ echo
         echo "<td>" .$lin["nm_product"].  "</td>";
         echo "<td>" .$lin["qt_product"]. "</td>";
         echo "<td>" .$lin["vl_product"]. "</td>";
-        echo "<td><i style='margin-right: 5px;'' class='fa fa-close fa-2x' aria-hidden='true'></i> <i style='margin-left: 5px;'' class='fa fa-refresh fa-2x' aria-hidden='true'></i></td>";
+        echo "<td>
+                <form action='deletar_produto.php' method='get'>
+                    <input type='hidden' name='nomeProduto' value='".$lin["nm_product"]."'/>
+                    <button type='submit' style='background-color: Transparent;background-repeat:no-repeat; border: none;'>
+                        <i style='margin-right: 5px;' class='fa fa-close fa-2x' aria-hidden='true'></i>
+                    </button>
+                </form>
+             </td>";
+        echo "<td>
+                <form action='' method='get'>
+                    <button type='submit' style='background-color: Transparent;background-repeat:no-repeat; border: none;'>
+                        <i style='margin-left: 5px;' class='fa fa-refresh fa-2x' aria-hidden='true'></i>
+                    </button>
+                </form>
+            </td>";
         echo "</tr>";
         echo "</tbody>";
-
       }
-
       ?>
       <tbody>
 </table>
