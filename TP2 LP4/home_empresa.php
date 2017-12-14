@@ -130,7 +130,7 @@ include 'includes/modal_editar_produto.php';
                     <div class="modal-body mb-0">
 
                         <p class="lead text-center">Cadastre as informações da venda</p>
-
+                        <form action="venda.php">
                         <div class="md-form form-sm">
                             <i class="fa fa-user prefix"></i>
 
@@ -141,15 +141,17 @@ include 'includes/modal_editar_produto.php';
 
                         
                         <div class="md-form form-sm">
+                            
                                 <i style="top: 7px;" class="fa fa-cube prefix"></i>
-                                <input required type="text" class="form-control" id="vendaProduto"  list = "brosers">
+                                <input required type="text" class="form-control" id="vendaProduto"  list ="prods">
                                 <label style="color: #494949;" for="vendaProduto">Nome do produto</label>
-                                <datalist id="brosers">
-                                    <option value="Macarrão">
-                                    <option value="Feijão">
-                                    <option value="Arroz">
-                                    <option value="Leite">
-                                    <option value="Pera">
+                                <datalist id="prods">
+                                    <?php
+                                    $tab = SelectProducts($cnpj);
+                                    while ($lin = mysqli_fetch_assoc($tab)) {
+                                        echo "<option value=\"" .$lin['nm_product']. "\">";
+                                    }
+                                    ?>
                                 </datalist>
                         </div>
 
@@ -210,8 +212,6 @@ include 'includes/modal_editar_produto.php';
 
 
 
-                                    //A seguir viria a função php para salvar a venda no banco de dados
-
                                 }
 
                         </script>
@@ -239,7 +239,6 @@ include 'includes/modal_editar_produto.php';
                             }
                         </script>
 
-                        <form>
                         <table id="minhaTabela" class="table table-bordered">
                           <thead>
                               <th>Produto</th>
