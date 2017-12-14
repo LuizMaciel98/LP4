@@ -3,6 +3,7 @@
 <?php include 'includes/head.php'; ?>
 <body>
 	<?php 
+    session_start();
     
     if(isset($_SESSION['cnpj'])){
         header("Location: home.php");
@@ -35,7 +36,7 @@
 			</div>
 			<div class="col-md-4 col-sm-4 col-lg-4">
 				<label for="cadastroLogo"><b style="color: #757575;">Logo:</b></label>
-				<input type="file" id="cadastroLogo" name="logo">
+				<input type="file" id="cadastroLogo" name="logo" accept=".png">
 			</div>
 		</div>
 

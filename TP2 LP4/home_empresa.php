@@ -6,6 +6,7 @@
 
 <body>
 <?php
+    session_start();
 
     include('includes/navbar.php');
     include 'includes/modal_contato.php';
@@ -35,8 +36,37 @@
 	<div style="padding-top: 50px;" class="container">
 	<div class="row" id="tabela-de-produtos">
 		<?php
-        include 'includes/tabela_produtos.php';
-        ?>
+include 'CRUD_product.php';
+echo
+"<table class='table table-bordered table-hover'>
+      <thead class='blue lighten-3'>
+        <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Quantidade</th>
+          <th>Valor</th>
+          <th>Excluir/Alterar</th>
+
+        </tr>
+      </thead>";
+      $cnpj = $_SESSION["cnpj"];
+      $tab = SelectProducts($cnpj);
+      while ($lin = mysqli_fetch_assoc($tab)) {
+        echo "<tbody>";
+        echo "<tr class='table-info'>";
+        echo "<th scope='row'>" .$lin["cd_product"]. "</th>";
+        echo "<td>" .$lin["nm_product"].  "</td>";
+        echo "<td>" .$lin["qt_product"]. "</td>";
+        echo "<td>" .$lin["vl_product"]. "</td>";
+        echo "<td><i style='margin-right: 5px;'' class='fa fa-close fa-2x' aria-hidden='true'></i> <i style='margin-left: 5px;'' class='fa fa-refresh fa-2x' aria-hidden='true'></i></td>";
+        echo "</tr>";
+        echo "</tbody>";
+
+      }
+
+      ?>
+      <tbody>
+</table>
 	</div>
 
 </div>
@@ -45,15 +75,12 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                alert('foi');
-                alert(this.responseText);
                 document.getElementById("tabela-de-produtos").innerHTML = this.responseText;
            }
         };
-        url = "includes/tabela_produtos.php?a=0";
+        url = "includes/tabela_produtos.php?a=1";
         xhttp.open("GET", url, true);
         xhttp.send();
-
     }
 </script>
 </section>
@@ -218,20 +245,25 @@ include 'includes/modal_produto.php';
                 </div>
 
                 <div class="modal-body mb-0">
-                <form action="deletar_produto.php" method="post">
-                    <div class="md-form form-sm">
-                        <i style="top: 7px;" class="fa fa-cube prefix"></i>
-                        <input required type="text" name="nomeProduto" class="form-control" id="excluirProduto"  list = "excprd">
-                        <label style="color: #494949;" for="excluirProduto">Nome do produto</label>
-                        <!--<datalist id="excprd">
-                            <option value="">
-                        </datalist>-->
-                    </div>
+
+                        <div class="md-form form-sm">
+                                <i style="top: 7px;" class="fa fa-cube prefix"></i>
+                                <input required type="text" class="form-control" id="excluirProduto"  list = "excprd">
+                                <label style="color: #494949;" for="excluirProduto">Nome do produto</label>
+                                <datalist id="excprd">
+                                    <option value="Macarrão">
+                                    <option value="Feijão">
+                                    <option value="Arroz">
+                                    <option value="Leite">
+                                    <option value="Pera">
+                                </datalist>
+                        </div>
+
 
                     <div class="text-center mt-1-half">
-                        <button type="submit" class="btn btn-success mb-1">EXCLUIR <i class="fa fa-check ml-1"></i></button>
+                        <button class="btn btn-success mb-1">EXCLUIR <i class="fa fa-check ml-1"></i></button>
                     </div>
-                </form>
+
                 </div>
             </div>
 
