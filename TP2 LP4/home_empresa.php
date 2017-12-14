@@ -183,16 +183,26 @@ include 'includes/modal_editar_produto.php';
                                     // Insere uma linha no fim da tabela
                                     var newRow = table.insertRow(numOfRows);
                                     //Cria uma nova coluna
-                                    newCell = newRow.insertCell(0);
+                                    //newCell = newRow.insertCell(0);
                                     // Insere um conteúdo na coluna
-                                    newCell.innerHTML = numOfRows;
+                                    //newCell.innerHTML = numOfRows;
+
+                                    newCell = newRow.insertCell(0);
+                                    nome_input = document.createElement("input");
+                                    nome_input.type = "hidden";
+                                    nome_input.name = "produto[" + (numOfRows - 1) + "]";
+                                    nome_input.value = document.getElementById("vendaProduto").value;
+                                    newCell.innerHTML = document.getElementById("vendaProduto").value;
+                                    newCell.append(nome_input);
+
 
                                     newCell = newRow.insertCell(1);
-                                    newCell.innerHTML = document.getElementById("vendaProduto").value;
-
-
-                                    newCell = newRow.insertCell(2);
+                                    quant_input = document.createElement("input");
+                                    quant_input.type = "hidden";
+                                    quant_input.name = "quant[" + (numOfRows - 1) + "]";
+                                    quant_input.value = document.getElementById("vendaQuantidade").value;
                                     newCell.innerHTML = document.getElementById("vendaQuantidade").value;
+                                    newCell.append(quant_input);
 
                                     //Apaga os valores dos inputs
                                     document.getElementById("vendaProduto").value = "";
@@ -232,7 +242,6 @@ include 'includes/modal_editar_produto.php';
                         <form>
                         <table id="minhaTabela" class="table table-bordered">
                           <thead>
-                              <th>Código</th>
                               <th>Produto</th>
                               <th>Quantidade</th>
                           </thead>
@@ -241,7 +250,7 @@ include 'includes/modal_editar_produto.php';
                         </table>
 
                         <div class="text-center mt-1-half">
-                          <button class="btn btn-outline-danger waves-effect" data-dismiss="modal">CANCELAR</button>
+                          <button type="submit" class="btn btn-outline-danger waves-effect" data-dismiss="modal">CANCELAR</button>
                             <input type="submit" class="btn btn-success" value="REALIZAR VENDA">
 
                         </div>
