@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+//include 'config.php';
 
 function InsertVenda($cnpj, $cd, $cliente, $vl_total, $dt) {
 	$con = getConnection();
@@ -9,11 +9,11 @@ function InsertVenda($cnpj, $cd, $cliente, $vl_total, $dt) {
 	mysqli_execute($stmt);
 }
 
-function ItemVenda($cdvenda, $cnpj, $cdprod, $qnt) {
+function InsertItemVenda($cdvenda, $cnpj, $cdprod, $qnt) {
 	$con = getConnection();
 	$query = "INSERT INTO sale_product VALUES(?, ?, ?, ?)";
 	$stmt = mysqli_prepare($con, $query);
 	mysqli_stmt_bind_param($stmt, "siii", $cnpj, $cdvenda, $cdprod, $qnt);
 	mysqli_execute($stmt);
 }
-?s
+?>

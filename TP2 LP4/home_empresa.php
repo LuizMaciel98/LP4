@@ -6,7 +6,6 @@
 
 <body>
 <?php
-    session_start();
 
     include('includes/navbar.php');
     include 'includes/modal_contato.php';
@@ -130,7 +129,9 @@ include 'includes/modal_editar_produto.php';
                     <div class="modal-body mb-0">
 
                         <p class="lead text-center">Cadastre as informações da venda</p>
+
                         <form action="venda.php">
+
                         <div class="md-form form-sm">
                             <i class="fa fa-user prefix"></i>
 
@@ -143,7 +144,7 @@ include 'includes/modal_editar_produto.php';
                         <div class="md-form form-sm">
                             
                                 <i style="top: 7px;" class="fa fa-cube prefix"></i>
-                                <input required type="text" class="form-control" id="vendaProduto"  list ="prods">
+                                <input type="text" class="form-control" id="vendaProduto"  list ="prods">
                                 <label style="color: #494949;" for="vendaProduto">Nome do produto</label>
                                 <datalist id="prods">
                                     <?php
@@ -157,7 +158,7 @@ include 'includes/modal_editar_produto.php';
 
                         <div class="md-form form-sm">
                             <i class="fa fa-cubes prefix"></i>
-                            <input name="quantidadeProduto" required type="number" id="vendaQuantidade" class="form-control">
+                            <input name="quantidadeProduto" type="number" id="vendaQuantidade" class="form-control">
                             <label for="vendaQuantidade">Quantidade</label>
                         </div>
 
@@ -165,7 +166,7 @@ include 'includes/modal_editar_produto.php';
 
                         <div class="md-form form-sm">
                             <i class="fa fa-dollar prefix"></i>
-                            <input required min="0"   pattern="^\d+(\.|\,)\d{2}$" title="Digite o dinheiro no formato correto (dois números após a vírgula)" type="text" id="vendaTotal" class="form-control">
+                            <input required min="0"   pattern="^\d+(\.|\,)\d{2}$" title="Digite o dinheiro no formato correto (dois números após a vírgula)" type="text" id="vendaTotal" name="vendaTotal" class="form-control">
                             <label for="formTotal">Valor total (R$)</label>
                         </div>
 
